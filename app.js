@@ -13,9 +13,6 @@ const scores = [];
 let roundScore = 0;
 let activePlayer = 0;
 
-// document.querySelector("#current-" + activePlayer).innerHTML =
-//   "<em>" + dice + "</em>";
-
 document.querySelector(".dice").style.display = "none";
 document.getElementById("score-0").textContent = "0";
 document.getElementById("score-1").textContent = "0";
@@ -35,6 +32,9 @@ document.querySelector(".btn-roll").addEventListener("click", function() {
   } else {
     activePlayer === 0 ? (activePlayer = 1) : (activePlayer = 0);
     roundscore = 0;
-    document.querySelector("#current-" + activePlayer).textContent = roundScore;
+    document.getElementById("current-" + activePlayer).textContent = "0";
+    document.querySelector(".player-0-panel").classList.toggle("active");
+    document.querySelector(".player-1-panel").classList.toggle("active");
+    document.querySelector(".dice").style.display = "none";
   }
 });
